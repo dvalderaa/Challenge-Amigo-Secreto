@@ -35,3 +35,21 @@ function actualizarLista() {
     lista.appendChild(li);
   }
 }
+
+function sortearAmigo() {
+  // La lista no debe estar vacía
+  if (amigos.length === 0) {
+    alert("No hay amigos para sortear.");
+    return;
+  }
+
+  // Generar un índice aleatorio
+  const indice = Math.floor(Math.random() * amigos.length);
+
+  // Obtener el nombre ganador
+  const ganador = amigos[indice];
+
+  // Mostrar el resultado en <ul id="resultado">
+  const resultadoElem = document.getElementById('resultado');
+  resultadoElem.innerHTML = `<li>Amigo secreto: <strong>${ganador}</strong></li>`;
+}
